@@ -1,0 +1,90 @@
+.activitybar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 52px;
+  min-width: 52px;
+  padding: var(--spacing-md) 0;
+  background: var(--color-background-secondary);
+
+  //   temp changes
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  touch-action: manipulation;
+
+  .actionBtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 42px;
+    padding: var(--spacing-0);
+    color: var(--color-text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition:
+      color var(--transition-fast),
+      background var(--transition-fast);
+
+    //   temp changes
+    position: relative;
+    pointer-events: auto;
+    touch-action: manipulation;
+    --webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 24px;
+        background: var(--color-accent);
+        border-radius: var(--radius-full);
+      }
+    }
+
+    &:active {
+      color: var(--color-text-primary);
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 2px;
+        height: 24px;
+        background: var(--color-accent);
+        border-radius: var(--radius-full);
+      }
+    }
+  }
+
+  .activeBtn {
+    color: var(--color-accent);
+    background: var(--color-background);
+    transition: filter var(--transition-fast);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 24px;
+      background: var(--color-accent);
+      border-radius: var(--radius-full);
+    }
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
